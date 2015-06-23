@@ -1,39 +1,89 @@
-.image {
-
-
+#mainHome {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -2;
 
 }
 
+#navContainer{
+    position:fixed;
+    top:0px;
+    z-index:5;
+    width:100%;
+}
+
+#transLogo{
+    height:70px;
+    wdith:70px;
+    margin-top:25px;
+    margin-left:25px;
+}
+
+#nameContainer {
+    margin: 10% 0 0 25%;
+}
+
+#navList{
+    display: inline-block;
+    float:right;
+    margin: 50px 35px 0 0;
+}
+
+#navList a{
+    color: #E3E3E3;
+    text-decoration: none;
+    font-family: Century Gothic, sans-serif;
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#navList a:hover{
+    color: #ffffff;
+}
+
 .li-img{
+    z-index: -1;
     background-size: cover;
     position: absolute;
     width: 100%;
     height: 100%;
+    transition: opacity 1000ms ease-in-out;
+}
+
+#header{
+    z-index: 1;
 }
 
 #bk1 {
 
-    background-image: url("../images/bk1.jpg");
+    background-image: url("../images/bk6.jpeg");
 }
 
 #bk2 {
-    background-image: url("../images/bk2.jpg");
+    background-image: url("../images/bk5.jpeg");
 }
 
 #bk3{
-    background-image: url("../images/bk3.jpg");
+    background-image: url("../images/bk7.jpeg");
 }
 
 #bk4{
-    background-image: url("../images/bk4.jpeg");
+    background-image: url("../images/bk9.jpeg");
 }
 
 .activeBackground{
     display: block;
+    opacity: 1;
+    float:left;
 }
 
 .nonActiveBackground{
-    display: none;
+    display: block;
+    opacity: 0;
+    float:none;
 }
 
 .content {
