@@ -1,3 +1,15 @@
+@font-face {
+    font-family: Infinity;
+    src: url("../font/Infinity.ttf");
+}
+
+@font-face {
+    font-family: EG;
+    src: url("../font/EBGaramond12-Regular.ttf");
+}
+
+
+
 #mainHome {
     position: absolute;
     width: 100%;
@@ -7,47 +19,100 @@
 
 }
 
+#fixedHeader
+{
+    position: fixed;
+    top:0;
+    left:0;
+    height:65px;
+    width:100%;
+    background-color:#f2f2f2;
+    z-index:-100;
+    opacity: 0;
+    -webkit-transition: all 1000ms;
+    -moz-transition: all 1000ms;
+
+    -webkit-box-shadow:0px 0.5px 1px #E3E3E3;
+    -moz-box-shadow:0px 0.5px 1px #E3E3E3;
+    box-shadow:0px 0.5px 1px #E3E3E3;
+}
+
+#orangeLogo
+{
+    height:40px;
+    width:40px;
+    margin: 15px 0 0 50px;
+}
+
 #navContainer{
     position:fixed;
     top:0px;
     z-index:5;
     width:100%;
+    opacity: 1;
+
+    -webkit-transition: all 1000ms;
+    -moz-transition: all 1000ms;
 }
 
 #transLogo{
-    height:70px;
-    wdith:70px;
+    height:45px;
+    wdith:45px;
     margin-top:25px;
     margin-left:25px;
 }
 
-#nameContainer {
-    margin: 10% 0 0 25%;
+
+#nameLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -95px;
+    margin-left: -172px;
 }
 
-#navList{
+#initNavList{
     display: inline-block;
     float:right;
-    margin: 50px 35px 0 0;
+    margin: 30px 35px 0 0;
 }
 
-#navList a{
+#scrollNavList{
+    display: inline-block;
+    float:right;
+    margin: 25px 35px 0 0;
+}
+
+#initNavList a {
     color: #E3E3E3;
     text-decoration: none;
-    font-family: Century Gothic, sans-serif;
+    font-family: Infinity, sans-serif;
     margin-left: 15px;
     font-size: 20px;
-    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+#initNavList a:hover{
+    color: #ffffff;
 }
 
-#navList a:hover{
-    color: #ffffff;
+#scrollNavList a{
+    color: #4A4A4A;
+    text-decoration: none;
+    font-family: Infinity, sans-serif;
+    margin: 0 0 15px 15px;
+    font-size: 20px;
+    letter-spacing: 0.2em
+}
+
+#scrollNavList a:hover{
+    color: #F2AB38;
 }
 
 .li-img{
     z-index: -1;
     background-size: cover;
     position: absolute;
+    top:0;
     width: 100%;
     height: 100%;
     transition: opacity 1000ms ease-in-out;
@@ -59,19 +124,20 @@
 
 #bk1 {
 
-    background-image: url("../images/bk6.jpeg");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("../images/bg1-min.jpeg");
+
 }
 
 #bk2 {
-    background-image: url("../images/bk5.jpeg");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("../images/bk12-min.jpeg");
 }
 
 #bk3{
-    background-image: url("../images/bk7.jpeg");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("../images/bk8-min.jpeg");
 }
 
 #bk4{
-    background-image: url("../images/bk9.jpeg");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("../images/bk3-min.jpg");
 }
 
 .activeBackground{
@@ -94,8 +160,26 @@
 
     width: 100%;
 
-    height: 200px;
+    height: 1000px;
 
-    background: yellow;
+    background-color: #F0F0F0;
 
 }
+
+#aboutMeDiv {
+    margin-top: 40px;
+    width:40%;
+    font-family: "EG";
+    font-weight: 300;
+    font-size:18px;
+    line-height: 30px;
+    color:#7A7A7A;
+}
+
+#aboutTitle{
+    font-family: Infinity;
+    font-size:45px;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+
