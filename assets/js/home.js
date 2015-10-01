@@ -2,28 +2,42 @@
  * Created by datang on 15-06-21.
  */
 
-$( document ).ready(function() {
-    setInterval(function(){
-        var next = $('.activeBackground').next();
-        if(!next.length) {
-            next = $('.image').children().first();
-        }
-        $('.activeBackground').removeClass('activeBackground').addClass('nonActiveBackground');
-        next.removeClass('nonActiveBackground').addClass('activeBackground');
-    }, 5000);
 
+$(document).ready(function(){
+
+    console.log("hi");
+    $("#loaderImg").load(function(){
+        var imgUrl = $(this).attr("src");
+        $(".jumbotron").css("background", " no-repeat center center fixed url("+imgUrl+")");
+        $(".jumbotron").css("-webkit-background-size","100%");
+        $(".jumbotron").css("-moz-background-size","100%");
+        $(".jumbotron").css("-o-background-size","100%");
+        $(".jumbotron").css("background-size","100%");
+        $(".jumbotron").css("-webkit-background-size","cover");
+        $(".jumbotron").css("-webkit-background-size","cover");
+        $(".jumbotron").css("-webkit-background-size","cover");
+
+        $("#loaderImg").remove();
+    })
+
+    setTimeout(function(){
+        $("#loader-wrapper").toggleClass("loaderWrapperHide");
+        $('#mainContainer').show();
+        setTimeout(function(){
+            $("#loader-wrapper").remove();
+        }, 1200);
+    }, 2500);
 
     $(window).scroll(function() {
         var height = $(window).scrollTop();
-
-        if(height  > 0) {
-            $('#navContainer').css({'opacity': '0', 'z-index': '-100'});
-            $('#fixedHeader').css({'opacity': '1', 'z-index': '100'});
+        var windowheight = window.innerHeight;
+        if(height  > windowheight - 100) {
+            $('#fixedHeader').removeClass("hide");
         }else {
-            $('#fixedHeader').css({'opacity': '0', 'z-index': '-100'});
-            $('#navContainer').css({'opacity': '1', 'z-index': '100'});
+            $('#fixedHeader').addClass("hide");
         }
     });
+
 
     $('a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -32,9 +46,10 @@ $( document ).ready(function() {
             if (target.length) {
                 $('html,body').animate({
                     scrollTop: target.offset().top - 80
-                }, 600);
+                }, 1000);
                 return false;
             }
         }
     });
+
 });
